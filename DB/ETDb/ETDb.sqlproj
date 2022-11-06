@@ -1,0 +1,162 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <Name>ETDb</Name>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectVersion>4.1</ProjectVersion>
+    <ProjectGuid>{af9811f0-843e-4699-b167-7bbc1c40cc2e}</ProjectGuid>
+    <DSP>Microsoft.Data.Tools.Schema.Sql.Sql130DatabaseSchemaProvider</DSP>
+    <OutputType>Database</OutputType>
+    <RootPath>
+    </RootPath>
+    <RootNamespace>ETDb</RootNamespace>
+    <AssemblyName>ETDb</AssemblyName>
+    <ModelCollation>1033,CI</ModelCollation>
+    <DefaultFileStructure>BySchemaAndSchemaType</DefaultFileStructure>
+    <DeployToDatabase>True</DeployToDatabase>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <TargetLanguage>CS</TargetLanguage>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <SqlServerVerification>False</SqlServerVerification>
+    <IncludeCompositeObjects>True</IncludeCompositeObjects>
+    <TargetDatabaseSet>True</TargetDatabaseSet>
+    <DefaultCollation>SQL_Latin1_General_CP1_CI_AS</DefaultCollation>
+    <DefaultFilegroup>PRIMARY</DefaultFilegroup>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">11.0</VisualStudioVersion>
+    <!-- Default to the v11.0 targets path if the targets file for the current VS version is not found -->
+    <SSDTExists Condition="Exists('$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets')">True</SSDTExists>
+    <VisualStudioVersion Condition="'$(SSDTExists)' == ''">11.0</VisualStudioVersion>
+  </PropertyGroup>
+  <Import Condition="'$(SQLDBExtensionsRefPath)' != ''" Project="$(SQLDBExtensionsRefPath)\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <Import Condition="'$(SQLDBExtensionsRefPath)' == ''" Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <ItemGroup>
+    <Folder Include="Properties" />
+    <Folder Include="dbo\" />
+    <Folder Include="dbo\Tables\" />
+    <Folder Include="dbo\Stored Procedures\" />
+    <Folder Include="scripts" />
+    <Folder Include="dbo\Functions\" />
+    <Folder Include="dbo\User Defined Types\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ETDb.publish.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Build Include="dbo\Tables\WorkingHourRule.sql" />
+    <Build Include="dbo\Tables\TimesheetEntry.sql" />
+    <Build Include="dbo\Tables\TaskCategory.sql" />
+    <Build Include="dbo\Tables\Task.sql" />
+    <Build Include="dbo\Tables\SOWRole.sql" />
+    <Build Include="dbo\Tables\SOW.sql" />
+    <Build Include="dbo\Tables\Skill.sql" />
+    <Build Include="dbo\Tables\ResourceSkill.sql" />
+    <Build Include="dbo\Tables\ResourceRole.sql" />
+    <Build Include="dbo\Tables\Resource.sql" />
+    <Build Include="dbo\Tables\RateType.sql" />
+    <Build Include="dbo\Tables\Project.sql" />
+    <Build Include="dbo\Tables\LeaveType.sql" />
+    <Build Include="dbo\Tables\LeavePermission.sql" />
+    <Build Include="dbo\Tables\InvoiceInfo.sql" />
+    <Build Include="dbo\Tables\Holiday.sql" />
+    <Build Include="dbo\Tables\Department.sql" />
+    <Build Include="dbo\Tables\Currency.sql" />
+    <Build Include="dbo\Tables\Client.sql" />
+    <Build Include="dbo\Tables\BillingType.sql" />
+    <Build Include="dbo\Tables\BillingRate.sql" />
+    <Build Include="dbo\Tables\Beneficiary.sql" />
+    <Build Include="dbo\Tables\Allocation.sql" />
+    <Build Include="dbo\Tables\AbpUserTokens.sql" />
+    <Build Include="dbo\Tables\AbpUsers.sql" />
+    <Build Include="dbo\Tables\AbpUserRoles.sql" />
+    <Build Include="dbo\Tables\AbpUserOrganizationUnits.sql" />
+    <Build Include="dbo\Tables\AbpUserNotifications.sql" />
+    <Build Include="dbo\Tables\AbpUserLogins.sql" />
+    <Build Include="dbo\Tables\AbpUserLoginAttempts.sql" />
+    <Build Include="dbo\Tables\AbpUserClaims.sql" />
+    <Build Include="dbo\Tables\AbpUserAccounts.sql" />
+    <Build Include="dbo\Tables\AbpTenants.sql" />
+    <Build Include="dbo\Tables\AbpTenantNotifications.sql" />
+    <Build Include="dbo\Tables\AbpSettings.sql" />
+    <Build Include="dbo\Tables\AbpRoles.sql" />
+    <Build Include="dbo\Tables\AbpRoleClaims.sql" />
+    <Build Include="dbo\Tables\AbpPermissions.sql" />
+    <Build Include="dbo\Tables\AbpOrganizationUnits.sql" />
+    <Build Include="dbo\Tables\AbpOrganizationUnitRoles.sql" />
+    <Build Include="dbo\Tables\AbpNotificationSubscriptions.sql" />
+    <Build Include="dbo\Tables\AbpNotifications.sql" />
+    <Build Include="dbo\Tables\AbpLanguageTexts.sql" />
+    <Build Include="dbo\Tables\AbpLanguages.sql" />
+    <Build Include="dbo\Tables\AbpFeatures.sql" />
+    <Build Include="dbo\Tables\AbpEntityPropertyChanges.sql" />
+    <Build Include="dbo\Tables\AbpEntityChangeSets.sql" />
+    <Build Include="dbo\Tables\AbpEntityChanges.sql" />
+    <Build Include="dbo\Tables\AbpEditions.sql" />
+    <Build Include="dbo\Tables\AbpBackgroundJobs.sql" />
+    <Build Include="dbo\Tables\AbpAuditLogs.sql" />
+    <Build Include="dbo\Tables\__EFMigrationsHistory.sql" />
+    <Build Include="dbo\Tables\SowStatusNote.sql" />
+    <Build Include="dbo\Functions\fn_WorkDays.sql" />
+    <Build Include="dbo\Stored Procedures\spGetAvailableResource.sql" />
+    <Build Include="dbo\Stored Procedures\spGetSOWAllocatedResource.sql" />
+    <Build Include="dbo\Tables\SkillLevel.sql" />
+    <Build Include="dbo\Tables\ProjectType.sql" />
+    <Build Include="dbo\Tables\ProjectStateType.sql" />
+    <Build Include="dbo\Tables\SowRoleTimeStamps.sql" />
+    <Build Include="dbo\Tables\AllocationTimeStamp.sql" />
+    <Build Include="dbo\Stored Procedures\spGetSOWRolesAllocationStatus.sql" />
+    <Build Include="dbo\Stored Procedures\spGetAllocationForResource.sql" />
+    <Build Include="dbo\Tables\InternalType.sql" />
+    <Build Include="dbo\Stored Procedures\spGetSowRolesWithSupporterType.sql" />
+    <Build Include="dbo\Stored Procedures\spGetNonSupporterSOWRoles.sql" />
+    <Build Include="dbo\Stored Procedures\spGetTimeSheetsForUserFromAPeriod.sql" />
+    <Build Include="dbo\Stored Procedures\spGetAvailableAllocationsForUser.sql" />
+    <Build Include="dbo\Stored Procedures\spGetApprovalInformation.sql" />
+    <Build Include="dbo\Stored Procedures\spGetSubmitterInformationOfTimeSheet.sql" />
+    <Build Include="dbo\User Defined Types\TimeSheetIDList.sql" />
+    <Build Include="dbo\Stored Procedures\spCanUserSaveOrSubmitTimeSheet.sql" />
+    <Build Include="dbo\Stored Procedures\spCanUserApproveOrRejectTimeSheet.sql" />
+    <Build Include="dbo\Stored Procedures\spGetTimeSheetSubmittersInformationForApprover.sql" />
+    <Build Include="dbo\Tables\DeploymentInformation.sql" />
+    <Build Include="dbo\Tables\LeaveBank.sql" />
+    <Build Include="dbo\Tables\AllocationType.sql" />
+    <Build Include="dbo\Tables\AllocationStatus.sql" />
+    <Build Include="dbo\Stored Procedures\spGetTimeSheetCalendarForCurrentUser.sql" />
+    <Build Include="dbo\Stored Procedures\spDoTimeSheetsContainSubmittedOrApprovedTimeSheet.sql" />
+    <Build Include="dbo\Stored Procedures\spDoTimeSheetsContainRejectedTimeSheet.sql" />
+    <Build Include="dbo\Stored Procedures\spDoTimeSheetsContainApprovedTimeSheet.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <PreDeploy Include="scripts\Pre_Deployment.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <PostDeploy Include="scripts\Post_Deployment.sql" />
+  </ItemGroup>
+</Project>

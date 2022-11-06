@@ -1,0 +1,125 @@
+export const DATE_FORMAT = "dd/MM/yyyy";
+export const DATE_PARSE = "yyyy-MM-dd";
+export const XLS_DOWNLOAD_DATE = "dd.MM.yyyy";
+
+export const STATUS = {
+  DRAFT: "Draft",
+  OPEN: "Open",
+  CONFIRMED: "Confirmed",
+  SIGNED: "Signed",
+  CLOSED: "Closed",
+  REJECTED: "Rejected"
+};
+
+export const BILL_TYPE = {
+  MRTC: "MRT-C",
+  TMFTT: "TMFT-T",
+  TMFTC: "TMFT-C",
+  TMFTTB: "TMFT-TB",
+  TMFTCB: "TMFT-CB",
+  TMPTT: "TMPT-T",
+  TMPTC: "TMPT-C",
+  TMPTTB: "TMPT-TB",
+  TMPTCB: "TMPT-CB"
+};
+
+export const SELECTORS_STATUS = {
+  [STATUS.DRAFT]: [STATUS.DRAFT, STATUS.OPEN],
+  [STATUS.OPEN]: [STATUS.OPEN, STATUS.CONFIRMED],
+  [STATUS.CONFIRMED]: [STATUS.CONFIRMED, STATUS.REJECTED, STATUS.SIGNED],
+  [STATUS.SIGNED]: [STATUS.SIGNED, STATUS.CLOSED],
+  [STATUS.CLOSED]: [STATUS.CLOSED],
+  [STATUS.REJECTED]: [STATUS.REJECTED]
+};
+
+export const VALIDATE_STATUS = {
+  REQUIRED: "required",
+  OPTIONAL: "optional",
+  DISABLED: "disabled"
+};
+
+export const VALIDATE_SOW_ROLE = {
+  [BILL_TYPE.MRTC]: {
+    fte: VALIDATE_STATUS.REQUIRED,
+    totalHours: VALIDATE_STATUS.DISABLED,
+    totalHoursPerMonth: VALIDATE_STATUS.DISABLED,
+    endDate: VALIDATE_STATUS.OPTIONAL,
+    term: VALIDATE_STATUS.REQUIRED
+  },
+  [BILL_TYPE.TMFTT]: {
+    fte: VALIDATE_STATUS.REQUIRED,
+    totalHours: VALIDATE_STATUS.DISABLED,
+    totalHoursPerMonth: VALIDATE_STATUS.DISABLED,
+    endDate: VALIDATE_STATUS.REQUIRED,
+    term: VALIDATE_STATUS.OPTIONAL
+  },
+  [BILL_TYPE.TMFTC]: {
+    fte: VALIDATE_STATUS.REQUIRED,
+    totalHours: VALIDATE_STATUS.DISABLED,
+    totalHoursPerMonth: VALIDATE_STATUS.DISABLED,
+    endDate: VALIDATE_STATUS.OPTIONAL,
+    term: VALIDATE_STATUS.REQUIRED
+  },
+  [BILL_TYPE.TMFTTB]: {
+    fte: VALIDATE_STATUS.REQUIRED,
+    totalHours: VALIDATE_STATUS.REQUIRED,
+    totalHoursPerMonth: VALIDATE_STATUS.DISABLED,
+    endDate: VALIDATE_STATUS.REQUIRED,
+    term: VALIDATE_STATUS.OPTIONAL
+  },
+  [BILL_TYPE.TMFTCB]: {
+    fte: VALIDATE_STATUS.REQUIRED,
+    totalHours: VALIDATE_STATUS.DISABLED,
+    totalHoursPerMonth: VALIDATE_STATUS.REQUIRED,
+    endDate: VALIDATE_STATUS.OPTIONAL,
+    term: VALIDATE_STATUS.REQUIRED
+  },
+  [BILL_TYPE.TMPTT]: {
+    fte: VALIDATE_STATUS.OPTIONAL,
+    totalHours: VALIDATE_STATUS.DISABLED,
+    totalHoursPerMonth: VALIDATE_STATUS.DISABLED,
+    endDate: VALIDATE_STATUS.REQUIRED,
+    term: VALIDATE_STATUS.OPTIONAL
+  },
+  [BILL_TYPE.TMPTC]: {
+    fte: VALIDATE_STATUS.OPTIONAL,
+    totalHours: VALIDATE_STATUS.DISABLED,
+    totalHoursPerMonth: VALIDATE_STATUS.DISABLED,
+    endDate: VALIDATE_STATUS.OPTIONAL,
+    term: VALIDATE_STATUS.REQUIRED
+  },
+  [BILL_TYPE.TMPTTB]: {
+    fte: VALIDATE_STATUS.OPTIONAL,
+    totalHours: VALIDATE_STATUS.REQUIRED,
+    totalHoursPerMonth: VALIDATE_STATUS.DISABLED,
+    endDate: VALIDATE_STATUS.REQUIRED,
+    term: VALIDATE_STATUS.OPTIONAL
+  },
+  [BILL_TYPE.TMPTCB]: {
+    fte: VALIDATE_STATUS.OPTIONAL,
+    totalHours: VALIDATE_STATUS.DISABLED,
+    totalHoursPerMonth: VALIDATE_STATUS.REQUIRED,
+    endDate: VALIDATE_STATUS.OPTIONAL,
+    term: VALIDATE_STATUS.REQUIRED
+  }
+};
+
+export const FIELD_NAME = {
+  fte: "FTE",
+  totalHours: "Total Hours",
+  totalHoursPerMonth: "Total Hours/Month",
+  endDate: "End Date",
+  term: "Term"
+};
+
+export const VALIDATE_RATE_TYPE = {
+  [BILL_TYPE.MRTC]: "Monthly",
+  [BILL_TYPE.TMFTT]: "Daily",
+  [BILL_TYPE.TMFTC]: "Daily",
+  [BILL_TYPE.TMFTTB]: "Daily",
+  [BILL_TYPE.TMFTCB]: "Daily",
+  [BILL_TYPE.TMPTT]: "Hourly",
+  [BILL_TYPE.TMPTC]: "Hourly",
+  [BILL_TYPE.TMPTTB]: "Hourly",
+  [BILL_TYPE.TMPTCB]: "Hourly"
+};

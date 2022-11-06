@@ -1,0 +1,12 @@
+D:\6_Company_Project\ET\DB\ETDb\bin\Debug\ETDb.dacpac
+D:\6_Company_Project\ET\DB\ETDb\bin\Debug\ETDb.dll
+D:\6_Company_Project\ET\DB\ETDb\bin\Debug\ETDb.pdb
+D:\6_Company_Project\ET\DB\ETDb\obj\Debug\ETDb.sqlprojAssemblyReference.cache
+D:\6_Company_Project\ET\DB\ETDb\obj\Debug\Model.xml
+D:\6_Company_Project\ET\DB\ETDb\obj\Debug\refactor.xml
+D:\6_Company_Project\ET\DB\ETDb\obj\Debug\postdeploy.sql
+D:\6_Company_Project\ET\DB\ETDb\obj\Debug\predeploy.sql
+D:\6_Company_Project\ET\DB\ETDb\obj\Debug\ETDb.dll
+D:\6_Company_Project\ET\DB\ETDb\obj\Debug\ETDb.pdb
+D:\SelfProject\ET\DB\ETDb\obj\Debug\ETDb.dll
+D:\SelfProject\ET\DB\ETDb\obj\Debug\ETDb.pdb

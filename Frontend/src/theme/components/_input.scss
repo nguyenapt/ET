@@ -1,0 +1,31 @@
+input[type="text"], input[type="email"], input[type="password"] {
+    border: none;
+    padding: 5px 15px;
+    width: 100%;
+}
+
+button,
+.btn {
+    font-size: 1rem;
+    line-height: 1.2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 20px;
+    min-width: 120px;
+    height: 50px;
+    position: relative;
+    z-index: 1;
+    transition: all 0.4s;
+    margin: 0 auto;
+    border: none;
+    &.primary {}
+    &.secondary {
+        border-radius: 25px;
+        color: $text-color-gray;
+        background-color: $background-color-white;
+        &:hover {
+            opacity: .8;
+        }
+    }
+}
